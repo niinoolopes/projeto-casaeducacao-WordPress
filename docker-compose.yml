@@ -1,0 +1,47 @@
+wordpress:
+  image: wordpress:latest
+  ports:
+    - 80:80
+  volumes:
+    - ./MeuTema/app/:/var/www/html/wp-content/themes/MeuTema/
+    - ./MeuTema/plugins/:/var/www/html/wp-content/plugins/
+    - ./MeuTema/uploads/:/var/www/html/wp-content/uploads/
+    - ./MeuTema/system/:/var/www/html/system/
+  environment:
+    WORDPRESS_DB_HOST: db:3306
+    WORDPRESS_DB_USER: wordpress
+    WORDPRESS_DB_PASSWORD: wordpress
+  links:
+    - db
+  restart: always
+  # container_name: container-wp
+
+db:
+  image: mysql:5.7
+  command: mysqld --user=root
+  volumes:
+    - ./MeuTema/db:/docker-entrypoint-initdb.d
+  # volumes:
+  #   - db_data:/var/lib/mysql
+  # - ./.data/db:/var/lib/mysql
+  # - ./scripts/:/tmp/scripts/
+  # - ./db/:/tmp/db/
+  environment:
+    MYSQL_DATABASE: wordpress
+    MYSQL_USER: wordpress
+    MYSQL_ROOT_PASSWORD: wordpress
+    MYSQL_PASSWORD: wordpress
+  restart: always
+  # container_name: container-mysql
+
+phpmyadmin:
+  image: phpmyadmin/phpmyadmin
+  ports:
+    - 8080:80
+  environment:
+    PMA_USER: wordpress
+    PMA_PASSWORD: wordpress
+  links:
+    - db
+  restart: always
+  # container_name: container-phpmyadmin
