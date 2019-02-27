@@ -1,0 +1,39 @@
+.cursos-section{
+  padding-bottom: 12px;
+  @include breakpoint('min',S){
+    padding-bottom: 20px;
+    margin-bottom: 15px;
+  }
+}
+.curso-categoria {
+  text-transform: capitalize;
+  padding: 16px 10px;
+  border-bottom: 2px solid $amarelo;
+  background: $preto;
+  color: #fff;
+}
+.curso-card{
+  padding: 2px;
+  box-shadow: 0 2px 4px 2px rgba(0, 0, 0, .1);
+  width: 97%;
+  margin: 10px auto;
+  transition: .3s;
+}
+.curso-card:hover{
+  box-shadow: 0 2px 4px 2px rgba(0, 0, 0, .25);
+}
+.curso-capa{
+  overflow: hidden;
+}
+.curso-capa:hover img{
+  transform: scale(1.05);
+  cursor: pointer;
+}
+.curso-data{
+  font-style: italic;
+  display: inline-block;
+  padding: 4px;
+}
+.cursos-section .swiper-pagination-bullet-active{
+  background: $amarelo;
+}

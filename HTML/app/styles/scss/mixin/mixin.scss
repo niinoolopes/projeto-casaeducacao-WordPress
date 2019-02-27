@@ -1,0 +1,22 @@
+@mixin breakpoint($MediaQuery,$device){
+    @if $device == 'S' or $device == 's' { 
+        @media ( #{$MediaQuery}-width: $container_small ){ 
+            @content; 
+        }
+    }
+    @if $device == 'M' or $device == 'm' { 
+        @media ( #{$MediaQuery}-width: $container_medio ){ 
+            @content; 
+        }
+    }
+    @if $device == 'L' or $device == 'l' { 
+        @media ( #{$MediaQuery}-width: $container_large ){ 
+            @content; 
+        }
+    }
+    @if $device == 'X' or $device == 'x' { 
+        @media ( #{$MediaQuery}-width: $container_extra_large ){ 
+            @content; 
+        }
+    }
+}

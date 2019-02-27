@@ -1,0 +1,18 @@
+@import 'config/reset';
+@import 'config/variables';
+
+@import 'mixin/mixin';
+@import 'mixin/mixin-components';
+
+@import 'layout/grid-sass';
+
+@import 'page/_common/header';
+@import 'page/_common/_menu';
+@import 'page/_common/_menu-mobile';
+@import 'page/_common/footer';
+@import 'page/_common/sidebar';
+ 
+
+@import 'page/page';
+@import 'page/home/section-slider';
+@import 'page/home/section-cursos'

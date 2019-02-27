@@ -1,0 +1,124 @@
+@mixin mixin-row() {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+@mixin mixin-container( $M ){ 
+    margin-left: $M;
+    margin-right: $M;
+}
+
+
+@mixin mixin-col ( $P ){ 
+    flex-grow: 1;
+    flex-basis: 0; 
+} 
+
+
+
+.container.row,
+.container.row-s,
+.container.row-m,
+.container.row-l{
+    @include mixin-container( auto )
+}
+
+
+
+.container{
+    max-width: 100%;
+    @include mixin-container( auto )
+}  
+.row{
+    @include mixin-row();
+}
+.col{
+    @include mixin-col(2);
+} 
+@for $i from 1 through $colunas{
+    $width: ((100 / $colunas) * $i);
+    .col-#{$i} { 
+        width: #{$width + '%'};
+    } 
+}
+
+
+
+@include breakpoint( min , S){
+    .container{
+        max-width: $container_small;
+    }  
+    .row-s{
+        @include mixin-row();
+    }
+    .col-s{
+        @include mixin-col(2);
+    } 
+    @for $i from 1 through $colunas{
+        $width: ((100 / $colunas) * $i);
+        .col-s-#{$i} { 
+            width: #{$width + '%'};
+        } 
+    }
+}
+
+
+
+@include breakpoint( min , M){
+    .container{
+        max-width: $container_medio;
+    }  
+    .row-m{
+        @include mixin-row();
+    }
+    .col-m{
+        @include mixin-col(2);
+    } 
+    @for $i from 1 through $colunas{
+        $width: ((100 / $colunas) * $i);
+        .col-m-#{$i} { 
+            width: #{$width + '%'};
+        } 
+    }
+}
+
+
+
+@include breakpoint( min , L){
+    .container{
+        max-width: $container_large;
+    }  
+    .row-l{
+        @include mixin-row();
+    }
+    .col-l{
+        @include mixin-col(2);
+    } 
+    @for $i from 1 through $colunas{
+        $width: ((100 / $colunas) * $i);
+        .col-l-#{$i} { 
+            width: #{$width + '%'};
+        } 
+    }
+}
+
+
+
+@include breakpoint( min , x){
+    .container{
+        max-width: $container_extra_large;
+    }  
+    .row-x{
+        @include mixin-row();
+    }
+    .col-x{
+        @include mixin-col(2);
+    } 
+    @for $i from 1 through $colunas{
+        $width: ((100 / $colunas) * $i);
+        .col-x-#{$i} { 
+            width: #{$width + '%'};
+        } 
+    }
+}

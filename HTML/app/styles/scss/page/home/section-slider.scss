@@ -1,0 +1,19 @@
+.container-slider{
+  overflow: hidden;
+  padding-top: 10px;
+}
+.container-slider {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+} 
+.container-slider {
+  position: relative;
+}
+.container-slider img{
+  display: block;
+  margin: auto;
+}
+.container-slider .swiper-curso .swiper-pagination{
+  bottom: 0px;
+}

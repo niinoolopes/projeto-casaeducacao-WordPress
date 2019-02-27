@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow&subset=cyrillic,cyrillic-ext,latin-ext');
+*{
+    box-sizing: border-box;
+}
+html{
+    font-size: 16px;
+    line-height: 20px;
+    font-family: 'PT Sans Narrow', sans-serif;
+}  
+body, p, h1, h2, h3, h4, h5, h6, ul, ol{
+    margin: 0;
+    padding: 0;
+}
+ul, ol{
+    list-style-type: none;
+}
+nav li{
+    display: inline-block;
+}
+nav a{
+    text-decoration: none;
+    color: #000;
+}
+nav a:hover{
+    text-decoration: underline;
+    color: #000;
+}
+img{
+    max-width: 100%;
+    height: auto;
+}

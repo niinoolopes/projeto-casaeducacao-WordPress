@@ -1,0 +1,35 @@
+.header-top .container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 30px;
+}
+.header-top::before {
+  content: "";
+  display: block;
+  height: 30px;
+  width: 100%;
+  background: $preto;
+  position: absolute;
+  top: 0px;
+}
+.logo-top{
+  max-height: 100px;
+}
+.header-social{
+  display: none;
+
+}
+.header-social a{
+  display: inline-block;
+  margin: 0;
+  padding: 6px; 
+  transition: .3s;
+}
+.header-social a:hover{
+  transform: scale(1.25);
+}
+.header-social img{
+  width: 20px;
+  height: 20px;
+}
